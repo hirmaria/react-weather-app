@@ -5,6 +5,14 @@
 }
 .App .Weather ul {
   list-style-type: none;
+}
+
+.App .Weather .ul-center {
+  line-height: 16px;
+  padding-top: 20px;
+}
+.App .Weather .ul-right {
+  font-size: 16px;
   line-height: 18px;
 }
 
