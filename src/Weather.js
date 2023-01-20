@@ -103,7 +103,7 @@ export default function Weather() {
 
         <div className="row">
           <div className="col">
-            <Forecast />
+            <Forecast city={city} />
           </div>
           <div className="col">
             <div className="text-center">Fri</div>
