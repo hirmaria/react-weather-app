@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentDate from "./CurrentDate";
 import Icon from "./Icon";
+import Forecast from "./Forecast";
 
 export default function Weather() {
   let [city, setCity] = useState("");
   let [country, setCountry] = useState("");
   let [loaded, setLoaded] = useState(false);
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5cd3854388db274e217fd69a4769c1e5&units=metric`;
-  let foreCast = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&cnt=6&appid=5cd3854388db274e217fd69a4769c1e5`;
   let [temp, setTemp] = useState(null);
   let [feel, setFeel] = useState(null);
   let [humidity, setHumidity] = useState(null);
@@ -94,7 +94,7 @@ export default function Weather() {
             </h3>
             <ul className="ul-right op">
               <li>
-                <CurrentDate />
+                <CurrentDate city={city} />
               </li>
               <li>{description}</li>
             </ul>
@@ -103,15 +103,7 @@ export default function Weather() {
 
         <div className="row">
           <div className="col">
-            <div className="text-center">Fri</div>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="cloud"
-            />
-            <div>
-              <span>1°C </span>
-              <span className="op"> -3°C</span>
-            </div>
+            <Forecast />
           </div>
           <div className="col">
             <div className="text-center">Fri</div>
