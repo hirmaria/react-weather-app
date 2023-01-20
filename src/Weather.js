@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CurrentDate from "./CurrentDate";
-import Icon from "./Icon";
 import Forecast from "./Forecast";
 
 export default function Weather() {
   let [city, setCity] = useState("");
   let [country, setCountry] = useState("");
   let [loaded, setLoaded] = useState(false);
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5cd3854388db274e217fd69a4769c1e5&units=metric`;
+  let apiKey = `60ed4de53det2358c47boa751cc30ef5`;
+  let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   let [temp, setTemp] = useState(null);
   let [feel, setFeel] = useState(null);
   let [humidity, setHumidity] = useState(null);
@@ -17,14 +17,14 @@ export default function Weather() {
   let [icon, setIcon] = useState(null);
 
   function getWeather(response) {
-    setTemp(Math.round(response.data.main.temp));
-    setFeel(Math.round(response.data.main.feels_like));
-    setHumidity(response.data.main.humidity);
+    setTemp(Math.round(response.data.temperature.current));
+    setFeel(Math.round(response.data.temperature.feels_like));
+    setHumidity(response.data.temperature.humidity);
     setWind(response.data.wind.speed);
-    setCity(response.data.name);
-    setDescription(response.data.weather[0].main);
-    setCountry(response.data.sys.country);
-    setIcon(response.data.weather[0].icon);
+    setCity(response.data.city);
+    setDescription(response.data.condition.description);
+    setCountry(response.data.country);
+    setIcon(response.data.condition.icon_url);
   }
 
   function handleSubmit(event) {
@@ -76,8 +76,8 @@ export default function Weather() {
           </div>
         </form>
         <div className="row mb-2">
-          <div className="col-4 text-center">
-            <Icon icon={icon} />
+          <div className="col-4 text-start">
+            <img src={icon} alt={description} className="pb-4" />
             <span className="current-temp">{temp}</span>
             <span className="celcius">°C</span>
           </div>

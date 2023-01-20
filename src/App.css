@@ -1,5 +1,5 @@
 .App {
-  width: 600px;
+  width: 700px;
   margin: 100px 100px auto;
   padding: 20px 20px;
 }
@@ -15,7 +15,9 @@
   font-size: 16px;
   line-height: 18px;
 }
-
+.App .Weather img {
+  width: 100px;
+}
 .App .Weather .op {
   opacity: 0.75;
 }
@@ -24,7 +26,6 @@
 }
 .App .Weather .current-temp {
   font-size: 54px;
-  padding-left: 5px;
 }
 .App .Weather .celcius {
   position: relative;
