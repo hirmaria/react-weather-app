@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CurrentDate from "./CurrentDate";
+import WeatherIcon from "./WeatherIcon";
 //import Forecast from "./Forecast";
 
 export default function Weather(props) {
@@ -17,7 +18,7 @@ export default function Weather(props) {
       city: response.data.city,
       description: response.data.condition.description,
       country: response.data.country,
-      icon: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
     });
     setLoaded(true);
   }
@@ -57,11 +58,7 @@ export default function Weather(props) {
         </form>
         <div className="row mb-2">
           <div className="col-4 text-start">
-            <img
-              src={weatherData.icon}
-              alt={weatherData.description}
-              className="pb-4"
-            />
+            <WeatherIcon code={weatherData.icon} />
             <span className="current-temp">{weatherData.temp}</span>
             <span className="celcius">°C</span>
           </div>
