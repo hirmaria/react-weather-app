@@ -13,17 +13,11 @@ export default function CurrentDate() {
   ];
   let day = days[newDate.getDay()];
 
-  if (hour < 10 && minute < 10) {
-    if (minute < 10) {
-      return `${day}, 0${hour}:0${minute}`;
-    } else {
-      return `${day}, 0${hour}:${minute}`;
-    }
-  } else {
-    if (minute < 10) {
-      return `${day}, ${hour}:0${minute}`;
-    } else {
-      return `${day}, ${hour}:${minute}`;
-    }
+  if (minute < 10) {
+    minute = `0${minute}`;
   }
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  return `${day}, ${hour}:${minute}`;
 }
