@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentDate from "./CurrentDate";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
+
 //import Forecast from "./Forecast";
 
 export default function Weather(props) {
@@ -59,8 +61,7 @@ export default function Weather(props) {
         <div className="row mb-2">
           <div className="col-4 text-start">
             <WeatherIcon code={weatherData.icon} />
-            <span className="current-temp">{weatherData.temp}</span>
-            <span className="celcius">°C</span>
+            <Temperature temp={weatherData.temp} />
           </div>
           <div className="col-2 text-start op p-0">
             <ul className="ul-center ps-0 t-14">

@@ -1,0 +1,16 @@
+.Temperature a {
+  text-decoration: none;
+}
+.Temperature .inactive {
+  cursor: default;
+  color: black;
+}
+.Temperature .current-temp {
+  font-size: 54px;
+}
+.App .units {
+  position: relative;
+  bottom: 22px;
+  font-size: 20px;
+  font-weight: 500;
+}

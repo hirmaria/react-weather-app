@@ -24,12 +24,3 @@
 .App .Weather .t-14 {
   font-size: 14px;
 }
-.App .Weather .current-temp {
-  font-size: 54px;
-}
-.App .Weather .celcius {
-  position: relative;
-  bottom: 22px;
-  font-size: 20px;
-  font-weight: 500;
-}
