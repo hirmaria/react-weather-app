@@ -1,34 +1,34 @@
 import axios from "axios";
 import React, { useState } from "react";
-//import axios from "axios";
 
 export default function Forecast(props) {
   let days = [0, 1, 2, 3, 4, 5];
-  let [forecastData, setForecastData] = useState({});
+  let [weatherData, setWeatherData] = useState({});
 
-  function getTemp(response, index) {
-    setForecastData({
-      max: Math.round(response.data.daily[index].temperature.maximum),
-      min: Math.round(response.data.daily[index].temperature.minimum),
-      icon: response.data.daily[index].condition.icon,
+  function getTemperature(response) {
+    setWeatherData({
+      maxTemp: response.data.daily[0].temperature.maximum,
+      minTemp: response.data.daily[0].temperature.minimum,
+      icon: response.data.daily[0].condition.icon,
     });
   }
-  function day(index) {
-    let key = `60ed4de53det2358c47boa751cc30ef5`;
+
+  function getDay(day) {
+    let key = "60ed4de53det2358c47boa751cc30ef5";
     let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
 
-    axios(url).then(getTemp(index));
+    axios(url).then(getTemperature);
 
     return (
-      <div className="col-2">
-        <div>Day</div>
-        <div>icon</div>
+      <div className="col text-center">
+        <div>Wed</div>
+        <div>{weatherData.icon}</div>
         <div>
-          {forecastData.max} {forecastData.min}
+          {weatherData.maxTemp} {weatherData.minTemp}
         </div>
       </div>
     );
   }
 
-  return <div className="row">{days.map(day)}</div>;
+  return <div className="row">{days.map(getDay)}</div>;
 }
