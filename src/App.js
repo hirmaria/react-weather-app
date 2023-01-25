@@ -7,6 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Kyiv" />
+
         <footer className="mt-5">
           <a href="https://github.com/hirmaria/react-weather-app">
             Open-source code

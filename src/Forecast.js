@@ -1,28 +1,34 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
+//import axios from "axios";
 
 export default function Forecast(props) {
-  let city = props.city;
-  let [maxtemp, setMaxtemp] = useState(null);
-  let [mintemp, setMintemp] = useState(null);
+  let days = [0, 1, 2, 3, 4, 5];
+  let [forecastData, setForecastData] = useState({});
 
-  let apiKey = `60ed4de53det2358c47boa751cc30ef5`;
-  let urlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-
-  function getForecast(response) {
-    let days = [0, 1, 2, 3, 4, 5];
-
-    days.map(function (day) {
-      setMaxtemp(Math.round(response.data.daily[day].temperature.maximum));
-      setMintemp(Math.round(response.data.daily[day].temperature.minimum));
-      return (
-        <div className="col" key={day}>
-          <span>{maxtemp}°C </span>
-          <span className="op"> {mintemp}°C</span>
-        </div>
-      );
+  function getTemp(response, index) {
+    setForecastData({
+      max: Math.round(response.data.daily[index].temperature.maximum),
+      min: Math.round(response.data.daily[index].temperature.minimum),
+      icon: response.data.daily[index].condition.icon,
     });
   }
+  function day(index) {
+    let key = `60ed4de53det2358c47boa751cc30ef5`;
+    let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
 
-  axios(urlForecast).then(getForecast);
+    axios(url).then(getTemp(index));
+
+    return (
+      <div className="col-2">
+        <div>Day</div>
+        <div>icon</div>
+        <div>
+          {forecastData.max} {forecastData.min}
+        </div>
+      </div>
+    );
+  }
+
+  return <div className="row">{days.map(day)}</div>;
 }

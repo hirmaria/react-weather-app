@@ -3,6 +3,7 @@ import axios from "axios";
 import CurrentDate from "./CurrentDate";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
+import Forecast from "./Forecast.js";
 
 //import Forecast from "./Forecast";
 
@@ -81,6 +82,9 @@ export default function Weather(props) {
               <li className="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
+        </div>
+        <div className="row">
+          <Forecast city={weatherData.city} />
         </div>
       </div>
     );
