@@ -2,18 +2,18 @@ import "./Temperature.css";
 import React, { useState } from "react";
 
 export default function Temperature(props) {
-  let [units, setUnits] = useState("celsius");
+  let [units, setUnits] = useState(true);
 
   function handleFahrenheit(event) {
     event.preventDefault();
-    setUnits("fahrenheit");
+    setUnits(false);
   }
   function handleCelsius(event) {
     event.preventDefault();
-    setUnits("celsius");
+    setUnits(true);
   }
 
-  if (units === "celsius") {
+  if (units) {
     return (
       <span className="Temperature">
         <span className="current-temp">{props.temp}</span>
