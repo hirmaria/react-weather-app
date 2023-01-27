@@ -38,6 +38,7 @@ export default function Weather(props) {
     let apiKey = `60ed4de53det2358c47boa751cc30ef5`;
     let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios(url).then(getWeather);
+    console.log(url);
   }
 
   if (loaded) {
@@ -61,7 +62,7 @@ export default function Weather(props) {
         </form>
         <div className="row mb-2">
           <div className="col-4 text-start">
-            <WeatherIcon code={weatherData.icon} />
+            <WeatherIcon code={weatherData.icon} size={40} />
             <Temperature temp={weatherData.temp} />
           </div>
           <div className="col-2 text-start op p-0">

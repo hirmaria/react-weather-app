@@ -1,0 +1,16 @@
+.Forecast {
+  font-size: 14px;
+}
+
+.Forecast .forecast-day {
+  font-weight: 500;
+  opacity: 0.75;
+  margin-bottom: 5px;
+}
+.Forecast .daily-temperature {
+  opacity: 0.75;
+  margin: 5px;
+}
+.Forecast .daily-temperature-max {
+  font-weight: 500;
+}

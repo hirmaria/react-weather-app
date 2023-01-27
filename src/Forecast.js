@@ -1,34 +1,38 @@
+import "./Forecast.css";
 import axios from "axios";
 import React, { useState } from "react";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Forecast(props) {
-  let days = [0, 1, 2, 3, 4, 5];
-  let [weatherData, setWeatherData] = useState({});
+  //let days = [0, 1, 2, 3, 4, 5];
 
-  function getTemperature(response) {
-    setWeatherData({
-      maxTemp: response.data.daily[0].temperature.maximum,
-      minTemp: response.data.daily[0].temperature.minimum,
-      icon: response.data.daily[0].condition.icon,
-    });
+  function handleRespond(response) {
+    setLoaded(true);
+    setWeatherData(response.data.country);
+    console.log(weatherData);
   }
 
-  function getDay(day) {
-    let key = "60ed4de53det2358c47boa751cc30ef5";
-    let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
+  let [loaded, setLoaded] = useState(false);
+  let [weatherData, setWeatherData] = useState(null);
 
-    axios(url).then(getTemperature);
-
+  if (loaded) {
     return (
-      <div className="col text-center">
-        <div>Wed</div>
-        <div>{weatherData.icon}</div>
-        <div>
-          {weatherData.maxTemp} {weatherData.minTemp}
+      <div className="Forecast">
+        <div className="row">
+          <div className="col text-center">
+            <div className="forecast-day">Wed</div>
+            <WeatherIcon code="clear-sky-day" size={34} />
+            <div className="daily-temperature">
+              <span className="daily-temperature-max">19</span>{" "}
+              <span className="daily-temperature-min">10</span>
+            </div>
+          </div>
         </div>
       </div>
     );
+  } else {
+    let key = "60ed4de53det2358c47boa751cc30ef5";
+    let url = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${key}&units=metric`;
+    axios(url).then(handleRespond);
   }
-
-  return <div className="row">{days.map(getDay)}</div>;
 }
