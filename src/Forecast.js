@@ -8,7 +8,7 @@ export default function Forecast(props) {
 
   function handleRespond(response) {
     setLoaded(true);
-    setWeatherData(response.data.country);
+    setWeatherData(response.data.daily);
     console.log(weatherData);
   }
 
