@@ -9,9 +9,6 @@
   font-size: 16px;
   line-height: 18px;
 }
-.Weather img {
-  width: 100px;
-}
 .Weather .op {
   opacity: 0.75;
 }
