@@ -11,6 +11,7 @@ export default function Forecast(props) {
   function handleRespond(response) {
     setLoaded(true);
     setWeatherData(response.data.daily);
+    console.log(response.data.daily);
   }
 
   let [loaded, setLoaded] = useState(false);
@@ -27,6 +28,8 @@ export default function Forecast(props) {
                   <ForecastDay forecast={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
