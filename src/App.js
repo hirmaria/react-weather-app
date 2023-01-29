@@ -9,11 +9,11 @@ export default function App() {
         <Weather defaultCity="Kyiv" />
 
         <footer className="mt-5">
-          <a href="https://github.com/hirmaria/react-weather-app">
-            Open-source code
-          </a>
-          , by
-          <a href="https://github.com/hirmaria"> Maria Hirman</a>
+          This project was coded by
+          <a href="https://github.com/hirmaria"> Maria Hirman</a>{" "}
+          <span>and is open-source code on</span>{" "}
+          <a href="https://github.com/hirmaria/react-weather-app">GitHub</a>
+          <span>and hosted on</span>
         </footer>
       </div>
     </div>
