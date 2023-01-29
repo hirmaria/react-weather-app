@@ -11,7 +11,6 @@ export default function Forecast(props) {
   function handleRespond(response) {
     setLoaded(true);
     setWeatherData(response.data.daily);
-    console.log(response.data.daily);
   }
 
   let [loaded, setLoaded] = useState(false);
