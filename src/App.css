@@ -1,29 +1,28 @@
-.App {
-  width: 700px;
-  margin: 100px 100px auto;
-  padding: 20px 20px;
-}
-.App .Weather ul {
-  list-style-type: none;
+@media (max-width: 660px) {
+  .App {
+    width: 400px;
+    margin: 20px 20px auto 20px;
+  }
+  .App footer {
+    font-size: 8px;
+  }
 }
 
-.App .Weather .ul-center {
-  line-height: 16px;
-  padding-top: 20px;
+.App {
+  color: #472d2d;
+  width: 600px;
+  margin: 100px auto;
+  padding: 20px 20px;
+  border: solid 1px #e1d7c6;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #e1d7c6;
+  background-color: white;
 }
-.App .Weather .ul-right {
-  font-size: 16px;
-  line-height: 18px;
-}
-.App .Weather img {
-  width: 100px;
-}
-.App .Weather .op {
+
+.App footer {
+  font-size: 12px;
   opacity: 0.75;
 }
-.App .Weather .t-14 {
-  font-size: 14px;
-}
-footer {
-  font-size: 12px;
+.App footer a {
+  color: #3d788b;
 }

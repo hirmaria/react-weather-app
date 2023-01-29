@@ -1,3 +1,4 @@
+import "./Weather.css";
 import React, { useState } from "react";
 import axios from "axios";
 import CurrentDate from "./CurrentDate";
@@ -41,8 +42,8 @@ export default function Weather(props) {
   if (loaded) {
     return (
       <div className="Weather">
-        <form className="row mb-3" onSubmit={handleSubmit}>
-          <div className="col-9">
+        <form className="row mb-3 py-3" onSubmit={handleSubmit}>
+          <div className="col-10">
             <input
               className="form-control"
               type="text"
@@ -50,11 +51,11 @@ export default function Weather(props) {
               onChange={changeCity}
             />
           </div>
-          <div className="col-3">
-            <input className="btn btn-primary" type="submit" value="Search" />
+          <div className="col-2">
+            <input className="btn" type="submit" value="Search" />
           </div>
         </form>
-        <div className="row mb-2">
+        <div className="row mb-2 pb-3">
           <div className="col-4 text-start">
             <WeatherIcon code={weatherData.icon} size={40} />
             <Temperature temp={weatherData.temp} />

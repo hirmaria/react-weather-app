@@ -1,0 +1,28 @@
+.Weather ul {
+  list-style-type: none;
+}
+.Weather .ul-center {
+  line-height: 16px;
+  padding-top: 20px;
+}
+.Weather .ul-right {
+  font-size: 16px;
+  line-height: 18px;
+}
+.Weather img {
+  width: 100px;
+}
+.Weather .op {
+  opacity: 0.75;
+}
+.Weather .t-14 {
+  font-size: 14px;
+}
+.Weather input {
+  box-shadow: 2px 2px 5px #e1d7c6;
+  border: solid 1px #e1d7c6;
+}
+.Weather .btn {
+  background-color: #579bb1;
+  color: white;
+}

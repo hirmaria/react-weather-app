@@ -1,9 +1,10 @@
 .Temperature a {
   text-decoration: none;
+  color: #579bb1;
 }
 .Temperature .inactive {
   cursor: default;
-  color: black;
+  color: #472d2d;
 }
 .Temperature .current-temp {
   font-size: 54px;
