@@ -1,3 +1,12 @@
+@media (max-width: 640px) {
+  .Weather .ul-right {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+.Weather .t-14 {
+  font-size: 12px;
+}
 .Weather ul {
   list-style-type: none;
 }
