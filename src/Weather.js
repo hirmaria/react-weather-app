@@ -43,7 +43,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form className="row mb-3 py-3" onSubmit={handleSubmit}>
-          <div className="col-10">
+          <div className="search-input col-10">
             <input
               className="form-control"
               type="text"
@@ -55,22 +55,23 @@ export default function Weather(props) {
             <input className="btn" type="submit" value="Search" />
           </div>
         </form>
-        <div className="row mb-2 pb-3">
-          <div className="row">
-            <div className="col-4 col-xs-6 text-start">
+        <div className="row">
+          <div className="col-6 col-sm text-start">
+            <span className="current-temp-icon">
               <WeatherIcon code={weatherData.icon} size={40} />
-              <Temperature temp={weatherData.temp} />
-            </div>
-            <div className="col-2 col-xs-6 text-start op p-0">
-              <ul className="ul-center ps-0 t-14">
-                <li>Feels like: {weatherData.feel}°C</li>
-                <li>Humidity: {weatherData.humidity}%</li>
-                <li>Wind: {weatherData.wind}m/s</li>
-              </ul>
-            </div>
+            </span>
+
+            <Temperature temp={weatherData.temp} />
           </div>
-          <div className="col-6 col-xs-4 text-end pb-0">
-            <h3 className="lh-1">
+          <div className="col-6 col-sm text-start ps-0 op">
+            <ul className="ul-center t-14">
+              <li>Feels like: {weatherData.feel}°C</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind}m/s</li>
+            </ul>
+          </div>
+          <div className="col-6 col-sm text-end-sm">
+            <h3>
               {weatherData.city}, {weatherData.country}
             </h3>
             <ul className="ul-right op">
@@ -81,7 +82,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <div className="row">
+        <div className="row pt-2">
           <Forecast city={weatherData.city} />
         </div>
       </div>

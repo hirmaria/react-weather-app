@@ -1,7 +1,8 @@
-@media (max-width: 640px) {
+@media (max-width: 570px) {
   .Weather .ul-right {
     font-size: 12px !important;
     line-height: 14px !important;
+    padding-left: 0 !important;
   }
   .Weather .t-14 {
     font-size: 12px !important;
@@ -9,18 +10,30 @@
   h3 {
     font-size: 18px !important;
   }
+  .Weather .ul-center {
+    padding-top: 0 !important;
+  }
+  .Weather .search-input {
+    max-width: 70%;
+  }
+  .Weather .current-temp-icon {
+    padding: 5px;
+  }
 }
-
+.Weather .current-temp-icon {
+  padding: 5px;
+}
 .Weather ul {
   list-style-type: none;
 }
 .Weather .ul-center {
   line-height: 16px;
-  padding-top: 20px;
+  padding-top: 18px;
 }
 .Weather .ul-right {
   font-size: 16px;
   line-height: 18px;
+  font-weight: 500;
 }
 .Weather .op {
   opacity: 0.75;
@@ -35,4 +48,7 @@
 .Weather .btn {
   background-color: #579bb1;
   color: white;
+}
+.Weather h3 {
+  line-height: 20px;
 }
