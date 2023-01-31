@@ -56,18 +56,20 @@ export default function Weather(props) {
           </div>
         </form>
         <div className="row mb-2 pb-3">
-          <div className="col-4 text-start">
-            <WeatherIcon code={weatherData.icon} size={40} />
-            <Temperature temp={weatherData.temp} />
+          <div className="row">
+            <div className="col-4 col-xs-6 text-start">
+              <WeatherIcon code={weatherData.icon} size={40} />
+              <Temperature temp={weatherData.temp} />
+            </div>
+            <div className="col-2 col-xs-6 text-start op p-0">
+              <ul className="ul-center ps-0 t-14">
+                <li>Feels like: {weatherData.feel}°C</li>
+                <li>Humidity: {weatherData.humidity}%</li>
+                <li>Wind: {weatherData.wind}m/s</li>
+              </ul>
+            </div>
           </div>
-          <div className="col-2 text-start op p-0">
-            <ul className="ul-center ps-0 t-14">
-              <li>Feels like: {weatherData.feel}°C</li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind}m/s</li>
-            </ul>
-          </div>
-          <div className="col-6 text-end pb-0">
+          <div className="col-6 col-xs-4 text-end pb-0">
             <h3 className="lh-1">
               {weatherData.city}, {weatherData.country}
             </h3>

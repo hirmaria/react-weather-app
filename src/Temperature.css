@@ -1,9 +1,10 @@
 @media (max-width: 660px) {
   .Temperature .current-temp {
-    font-size: 24px;
+    font-size: 24px !important;
+    font-weight: 500;
   }
   .App .units {
-    font-size: 16px;
+    font-size: 14px !important;
   }
 }
 
