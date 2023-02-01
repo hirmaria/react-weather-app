@@ -69,3 +69,8 @@
 .Weather h3 {
   line-height: 20px;
 }
+.loader {
+  display: block;
+  margin-left: 50%;
+  margin-top: 150px;
+}

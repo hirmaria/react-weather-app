@@ -5,6 +5,7 @@ import CurrentDate from "./CurrentDate";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast.js";
+import { FidgetSpinner } from "react-loader-spinner";
 
 export default function Weather(props) {
   let [loaded, setLoaded] = useState(false);
@@ -89,6 +90,19 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "loading...";
+    return (
+      <div className="loader">
+        <FidgetSpinner
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="dna-loading"
+          wrapperStyle={{}}
+          wrapperClass="dna-wrapper"
+          ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+          backgroundColor="#579bb1"
+        />
+      </div>
+    );
   }
 }
