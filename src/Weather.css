@@ -3,6 +3,7 @@
     font-size: 12px !important;
     line-height: 14px !important;
     padding-left: 0 !important;
+    text-align: left;
   }
   .Weather .t-14 {
     font-size: 12px !important;
@@ -17,7 +18,10 @@
     max-width: 70%;
   }
   .Weather .current-temp-icon {
-    padding: 5px;
+    margin-top: 15px;
+  }
+  .Weather h3 {
+    text-align: left;
   }
 }
 .Weather .current-temp-icon {

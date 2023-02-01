@@ -56,6 +56,17 @@ export default function Weather(props) {
           </div>
         </form>
         <div className="row">
+          <div className="col-10 col-sm text-end order-sm-3 ">
+            <h3>
+              {weatherData.city}, {weatherData.country}
+            </h3>
+            <ul className="ul-right op p-0">
+              <li>
+                <CurrentDate />
+              </li>
+              <li className="text-capitalize">{weatherData.description}</li>
+            </ul>
+          </div>
           <div className="col-6 col-sm text-start">
             <span className="current-temp-icon">
               <WeatherIcon code={weatherData.icon} size={40} />
@@ -68,17 +79,6 @@ export default function Weather(props) {
               <li>Feels like: {weatherData.feel}°C</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind}m/s</li>
-            </ul>
-          </div>
-          <div className="col-6 col-sm text-end-sm">
-            <h3>
-              {weatherData.city}, {weatherData.country}
-            </h3>
-            <ul className="ul-right op">
-              <li>
-                <CurrentDate />
-              </li>
-              <li className="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
         </div>
