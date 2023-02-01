@@ -55,7 +55,7 @@ export default function Weather(props) {
             <input className="btn" type="submit" value="Search" />
           </div>
         </form>
-        <div className="row">
+        <div className="row my-4">
           <div className="col-10 col-sm text-end order-sm-3 ">
             <h3>
               {weatherData.city}, {weatherData.country}
@@ -82,7 +82,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <div className="row pt-2">
+        <div className="row py-2">
           <Forecast city={weatherData.city} />
         </div>
       </div>
