@@ -1,4 +1,8 @@
 @media (max-width: 570px) {
+  .Weather {
+    width: 350px !important;
+    margin: 50px auto !important;
+  }
   .Weather .ul-right {
     font-size: 12px !important;
     line-height: 14px !important;
@@ -23,6 +27,15 @@
   .Weather h3 {
     text-align: left;
   }
+}
+.Weather {
+  border: solid 1px #e1d7c6;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #e1d7c6;
+  background-color: white;
+  width: 600px;
+  margin: 50px auto;
+  padding: 20px 20px;
 }
 .Weather .current-temp-icon {
   padding: 5px;

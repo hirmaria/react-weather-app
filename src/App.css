@@ -1,8 +1,4 @@
 @media (max-width: 570px) {
-  .App {
-    width: 350px !important;
-    margin: 50px auto !important;
-  }
   .App footer {
     font-size: 8px !important;
   }
@@ -10,16 +6,10 @@
 
 .App {
   color: #472d2d;
-  width: 600px;
-  margin: 50px auto;
-  padding: 20px 20px;
-  border: solid 1px #e1d7c6;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #e1d7c6;
-  background-color: white;
 }
 
 .App footer {
+  text-align: center;
   font-size: 12px;
   opacity: 0.75;
 }

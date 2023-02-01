@@ -8,7 +8,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Kyiv" />
 
-        <footer className="mt-5">
+        <footer className="mt-2">
           This project was coded by{" "}
           <a
             href="https://github.com/hirmaria"
